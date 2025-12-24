@@ -59,9 +59,11 @@ jobs:
         fvm flutter pub get
         fvm flutter build apk --debug
         
-    - name: Upload APK Artifact
+          - name: Build Release APK
+        run: flutter build apk --release
+
+    - name: Upload Release APK
       uses: actions/upload-artifact@v4
       with:
-        name: inventree-mobile-debug-apk
-        path: build/app/outputs/flutter-apk/app-debug.apk
-          
+        name: inventree-release-unsigned
+        path: build/app/outputs/flutter-apk/app-release.apk
