@@ -59,7 +59,7 @@ jobs:
         fvm flutter pub get
         fvm flutter build apk --debug
         
-          - name: Build Release APK
+    - name: Build Release APK
         run: flutter build apk --release
 
     - name: Upload Release APK
